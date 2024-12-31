@@ -153,4 +153,4 @@ PS > git clone https://github.com/coolsnowwolf/lede <your_local_lede_path>
 
 ## 捐贈
 
-Consider donating to the OpenWrt Foundation<https://openwrt.org/donate>
+考虑捐赠 [OpenWrt 组织](https://openwrt.org/donate)
