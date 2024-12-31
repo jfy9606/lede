@@ -163,29 +163,11 @@ PS > git clone git@github.com:coolsnowwolf/lede.git <your_local_lede_path>
 ## 宣言
 
 1. このソースコードには、HTTPS トラフィックを監視／キャプチャできるバックドアやクローズドソースアプリケーションは含まれていません。SSL セキュリティはサイバーセキュリティの最後の城です。安全性はファームウェアがすべきことです。
-2. OpenWRT の開発を学びたいが、何から始めたらいいかわからないですか？自己学習のモチベーションが上がらない？基礎知識が足りない？ズオ氏の初心者 OpenWRT トレーニングコースで一緒に OpenWRT 開発を学びましょう。お申し込みは[こちら](http://forgotfun.org/2018/04/openwrt-training-2018.html)をクリックしてください。
-3. QCA IPQ60xx オープンソースリポジトリ: <https://github.com/coolsnowwolf/openwrt-gl-ax1800>
-4. OpenWRT アーカイブリポジトリ: <https://github.com/coolsnowwolf/openwrt>
+2. QCA IPQ60xx オープンソースリポジトリ: <https://github.com/coolsnowwolf/openwrt-gl-ax1800>
+3. OpenWRT アーカイブリポジトリ: <https://github.com/coolsnowwolf/openwrt>
 
-## ソフトウェアルーター入門
-
-Yingku R2 - N95/N300 Mini Four-Network HomeLab Server
-
-(紹介ページ - Yingku Technology (support AliPay Huabei)):
-
-[先行販売リンク](https://item.taobao.com/item.htm?ft=t&id=719159813003)
-<div align="left">
-<a href="https://item.taobao.com/item.htm?ft=t&id=719159813003">
-  <img src="doc/r1.jpg" width = "600" alt="" align=center />
-</a>
-</div>
-<br>
 
 ## 寄付
 
-このプロジェクトがあなたのお役に立てたのであれば、このプロジェクトの発展を支援するための寄付をご検討ください。
+[OpenWrt Foundation](https://openwrt.org/donate) への寄付を検討してください。
 
-<div align="left">
-  <img src="./doc/star.png" width = "400" alt="" align=center />
-</div>
-<br>
