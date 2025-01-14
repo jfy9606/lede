@@ -5,7 +5,7 @@
 #
 # Copyright (C) 2020 KFERMercer
 #
-name: ax9000-CI
+name: tr3000-CI
 
 on:
   #schedule:
