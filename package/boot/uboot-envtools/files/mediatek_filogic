@@ -11,26 +11,6 @@ touch /etc/config/ubootenv
 
 board=$(board_name)
 
-block_dev_path() {
-       local dev_path
-
-       case "$1" in
-       /dev/mmcblk*)
-               dev_path="$1"
-               ;;
-       PARTLABEL=* | PARTUUID=*)
-               dev_path=$(blkid -t "$1" -o device)
-               [ -z "${dev_path}" -o $? -ne 0 ] && return 1
-               ;;
-       *)
-               return 1;
-              ;;
-       esac
-
-       echo "${dev_path}"
-       return 0
-}
-
 case "$board" in
 mediatek,mt7981-rfb|\
 mediatek,mt7986a-rfb|\
