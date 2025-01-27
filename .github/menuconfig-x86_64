@@ -1845,6 +1845,7 @@ CONFIG_PACKAGE_grub2-efi=y
 # CONFIG_PACKAGE_m4 is not set
 # CONFIG_PACKAGE_make is not set
 # CONFIG_PACKAGE_mt76-test is not set
+# CONFIG_PACKAGE_mt76-vendor is not set
 # CONFIG_PACKAGE_nasm is not set
 # CONFIG_PACKAGE_objdump is not set
 # CONFIG_PACKAGE_packr is not set
@@ -1925,6 +1926,7 @@ CONFIG_PACKAGE_amdgpu-firmware=y
 # CONFIG_PACKAGE_ath11k-firmware-ipq5018 is not set
 # CONFIG_PACKAGE_ath11k-firmware-ipq6018 is not set
 # CONFIG_PACKAGE_ath11k-firmware-ipq8074 is not set
+# CONFIG_PACKAGE_ath11k-firmware-qca2066 is not set
 # CONFIG_PACKAGE_ath11k-firmware-qca6390 is not set
 # CONFIG_PACKAGE_ath11k-firmware-qcn9074 is not set
 CONFIG_PACKAGE_ath11k-firmware-wcn6750=y
@@ -4340,7 +4342,7 @@ CONFIG_PACKAGE_libopenssl-conf=y
 # CONFIG_PACKAGE_libopenssl-gost_engine is not set
 # CONFIG_PACKAGE_libopenssl-legacy is not set
 # CONFIG_PACKAGE_libpolarssl is not set
-# CONFIG_PACKAGE_libwolfssl is not set
+CONFIG_PACKAGE_libwolfssl=m
 
 #
 # wolfSSL Library Configuration
@@ -4360,9 +4362,15 @@ CONFIG_WOLFSSL_HAS_ECC25519=y
 # CONFIG_WOLFSSL_HAS_ECC448 is not set
 CONFIG_WOLFSSL_HAS_OPENVPN=y
 CONFIG_WOLFSSL_ALT_NAMES=y
+CONFIG_WOLFSSL_HAS_NO_HW=y
+# CONFIG_WOLFSSL_HAS_AFALG is not set
+# CONFIG_WOLFSSL_HAS_DEVCRYPTO_CBC is not set
+# CONFIG_WOLFSSL_HAS_DEVCRYPTO_AES is not set
+# CONFIG_WOLFSSL_HAS_DEVCRYPTO_FULL is not set
 # end of wolfSSL Library Configuration
 
 # CONFIG_PACKAGE_libwolfsslcpu-crypto is not set
+# CONFIG_PACKAGE_libwolfssl-benchmark is not set
 # CONFIG_PACKAGE_openssl-qat is not set
 
 #
@@ -5219,6 +5227,7 @@ CONFIG_PACKAGE_luci-app-wol=y
 #
 CONFIG_PACKAGE_luci-theme-argon=y
 CONFIG_PACKAGE_luci-theme-bootstrap=y
+# CONFIG_PACKAGE_luci-theme-design is not set
 # CONFIG_PACKAGE_luci-theme-material is not set
 # CONFIG_PACKAGE_luci-theme-openwrt is not set
 # CONFIG_PACKAGE_luci-theme-openwrt-2020 is not set
@@ -5689,6 +5698,34 @@ CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y
 # end of Mail
 
 #
+# MTK Properties
+#
+
+#
+# Applications
+#
+# CONFIG_PACKAGE_atenl is not set
+# CONFIG_PACKAGE_ethswbox is not set
+# CONFIG_PACKAGE_mii_mgr is not set
+# CONFIG_PACKAGE_netfilter-flowtable is not set
+# CONFIG_PACKAGE_regs is not set
+# CONFIG_PACKAGE_switch is not set
+# end of Applications
+
+#
+# Drivers
+#
+# end of Drivers
+
+#
+# Misc
+#
+# CONFIG_PACKAGE_mtk_factory_rw is not set
+# CONFIG_PACKAGE_mtk_failsafe is not set
+# end of Misc
+# end of MTK Properties
+
+#
 # Multimedia
 #
 
@@ -5921,7 +5958,7 @@ CONFIG_PACKAGE_iptables-mod-tproxy=y
 
 # CONFIG_PACKAGE_miniupnpc is not set
 CONFIG_PACKAGE_miniupnpd=y
-# CONFIG_MINIUPNPD_IGDv2 is not set
+CONFIG_MINIUPNPD_IGDv2=y
 # CONFIG_PACKAGE_natpmpc is not set
 # CONFIG_PACKAGE_nftables-json is not set
 # CONFIG_PACKAGE_nftables-nojson is not set
@@ -6538,12 +6575,16 @@ CONFIG_PACKAGE_hostapd-common=y
 # CONFIG_PACKAGE_hostapd-mbedtls is not set
 # CONFIG_PACKAGE_hostapd-mini is not set
 # CONFIG_PACKAGE_hostapd-openssl is not set
+# CONFIG_PACKAGE_hostapd-utils is not set
 # CONFIG_PACKAGE_hostapd-wolfssl is not set
 # CONFIG_PACKAGE_hs20-client is not set
 # CONFIG_PACKAGE_hs20-common is not set
 # CONFIG_PACKAGE_hs20-server is not set
+# CONFIG_PACKAGE_wpa-cli is not set
 # CONFIG_PACKAGE_wpa-supplicant is not set
-# CONFIG_WPA_WOLFSSL is not set
+CONFIG_WPA_RFKILL_SUPPORT=y
+CONFIG_WPA_MSG_MIN_PRIORITY=3
+CONFIG_WPA_WOLFSSL=y
 # CONFIG_DRIVER_WEXT_SUPPORT is not set
 CONFIG_DRIVER_11AC_SUPPORT=y
 CONFIG_DRIVER_11AX_SUPPORT=y
@@ -6558,15 +6599,15 @@ CONFIG_WPA_MBO_SUPPORT=y
 # CONFIG_PACKAGE_wpa-supplicant-openssl is not set
 # CONFIG_PACKAGE_wpa-supplicant-p2p is not set
 # CONFIG_PACKAGE_wpa-supplicant-wolfssl is not set
-# CONFIG_PACKAGE_wpad is not set
+CONFIG_PACKAGE_wpad=y
 # CONFIG_PACKAGE_wpad-basic is not set
 # CONFIG_PACKAGE_wpad-basic-mbedtls is not set
-# CONFIG_PACKAGE_wpad-basic-openssl is not set
+CONFIG_PACKAGE_wpad-basic-openssl=m
 # CONFIG_PACKAGE_wpad-basic-wolfssl is not set
 # CONFIG_PACKAGE_wpad-mbedtls is not set
 # CONFIG_PACKAGE_wpad-mesh-mbedtls is not set
-# CONFIG_PACKAGE_wpad-mesh-openssl is not set
-# CONFIG_PACKAGE_wpad-mesh-wolfssl is not set
+CONFIG_PACKAGE_wpad-mesh-openssl=m
+CONFIG_PACKAGE_wpad-mesh-wolfssl=m
 # CONFIG_PACKAGE_wpad-mini is not set
 # CONFIG_PACKAGE_wpad-openssl is not set
 # CONFIG_PACKAGE_wpad-wolfssl is not set
@@ -6744,6 +6785,7 @@ CONFIG_PACKAGE_libipset=y
 # CONFIG_PACKAGE_mosquitto-ssl is not set
 CONFIG_PACKAGE_msd_lite=y
 # CONFIG_PACKAGE_mstpd is not set
+# CONFIG_PACKAGE_mtkhnat_util is not set
 # CONFIG_PACKAGE_mtr-json is not set
 # CONFIG_PACKAGE_mtr-nojson is not set
 # CONFIG_PACKAGE_mwol is not set
@@ -6847,6 +6889,7 @@ CONFIG_SAMBA4_SERVER_VFS=y
 # CONFIG_PACKAGE_slirp4netns is not set
 # CONFIG_PACKAGE_smartdns is not set
 # CONFIG_PACKAGE_smbinfo is not set
+# CONFIG_PACKAGE_smp_util is not set
 # CONFIG_PACKAGE_snmp-mibs is not set
 # CONFIG_PACKAGE_snmp-utils is not set
 # CONFIG_PACKAGE_snmpd is not set
@@ -7097,6 +7140,15 @@ CONFIG_PACKAGE_partx-utils=y
 # CONFIG_PACKAGE_px5g-wolfssl is not set
 # CONFIG_PACKAGE_stoken is not set
 # end of Encryption
+
+#
+# FIPS
+#
+# CONFIG_PACKAGE_fips_test_tool is not set
+# CONFIG_PACKAGE_jitterrng is not set
+# CONFIG_PACKAGE_libkcapi is not set
+# CONFIG_PACKAGE_openssl-fips-ext is not set
+# end of FIPS
 
 #
 # Filesystem
@@ -7733,13 +7785,13 @@ CONFIG_PACKAGE_ucode-mod-fs=y
 CONFIG_PACKAGE_ucode-mod-html=y
 CONFIG_PACKAGE_ucode-mod-lua=y
 CONFIG_PACKAGE_ucode-mod-math=y
-# CONFIG_PACKAGE_ucode-mod-nl80211 is not set
+CONFIG_PACKAGE_ucode-mod-nl80211=y
 # CONFIG_PACKAGE_ucode-mod-resolv is not set
-# CONFIG_PACKAGE_ucode-mod-rtnl is not set
+CONFIG_PACKAGE_ucode-mod-rtnl=y
 # CONFIG_PACKAGE_ucode-mod-struct is not set
 CONFIG_PACKAGE_ucode-mod-ubus=y
 CONFIG_PACKAGE_ucode-mod-uci=y
-# CONFIG_PACKAGE_ucode-mod-uloop is not set
+CONFIG_PACKAGE_ucode-mod-uloop=y
 # CONFIG_PACKAGE_udns-dnsget is not set
 # CONFIG_PACKAGE_udns-ex-rdns is not set
 # CONFIG_PACKAGE_udns-rblcheck is not set
