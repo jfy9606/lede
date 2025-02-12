@@ -272,7 +272,7 @@
 &switch {
 	status = "okay";
 
-	switch_lan_bmp = <0x20>; /* lan port bitmap */
+	switch_lan_bmp = <0x3e>; /* lan port bitmap */
 	switch_wan_bmp = <0x40>; /* wan port bitmap */
 	switch_mac_mode = <0xff>; /* mac mode for uniphy instance0*/
 	switch_mac_mode1 = <0xf>; /* mac mode for uniphy instance1*/
