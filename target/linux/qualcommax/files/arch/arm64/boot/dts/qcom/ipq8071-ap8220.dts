@@ -272,20 +272,12 @@
 &switch {
 	status = "okay";
         
-        switch_cpu_bmp = <0x1>;  /* cpu port bitmap */
-	switch_lan_bmp = <0x20>; /* lan port bitmap */
-	switch_wan_bmp = <0x40>; /* wan port bitmap */
-	switch_mac_mode = <0xff>; /* mac mode for uniphy instance0*/
-	switch_mac_mode1 = <0xf>; /* mac mode for uniphy instance1*/
-	switch_mac_mode2 = <0xf>; /* mac mode for uniphy instance2*/
-	bm_tick_mode = <0>; /* bm tick mode */
-	tm_tick_mode = <0>; /* tm tick mode */
+	switch_lan_bmp = <ESS_PORT5>; /* lan port bitmap */
+	switch_wan_bmp = <ESS_PORT6>; /* wan port bitmap */
+	switch_mac_mode1 = <MAC_MODE_SGMII_PLUS>; /* mac mode for uniphy instance1*/
+	switch_mac_mode2 = <MAC_MODE_SGMII_PLUS>; /* mac mode for uniphy instance2*/
 
 	qcom,port_phyinfo {
-		port@0 {
-                        port_id = <0>;
-                        port_mac_sel = "QGMAC_PORT";
-                };
                 port@5 {
 			port_id = <5>;
 			phy_address = <24>;
@@ -306,13 +298,13 @@
 &dp5 {
 	status = "okay";
 	phy-handle = <&qca8081_24>;
-        label = "wan";
+        label = "lan";
 };
 
 &dp6 {
 	status = "okay";
 	phy-handle = <&qca8081_28>;
-        label = "lan";
+        label = "wan";
 };
 
 &wifi {
