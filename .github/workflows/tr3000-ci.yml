@@ -93,6 +93,11 @@ jobs:
       - name: Checkout OpenWrt
         uses: actions/checkout@v3
 
+      - name: cache
+        uses: stupidloud/cachewrtbuild@main
+        with:
+          ccache: 'true'
+      
       - name: Update feeds
         run: |
           sed -i 's/#src-git helloworld/src-git helloworld/g' ./feeds.conf.default
@@ -102,10 +107,13 @@ jobs:
       - name: Generate configuration file
         run: |
           cp -f .github/menuconfig-tr3000 .config
+          echo -e 'CONFIG_DEVEL=y\nCONFIG_CCACHE=y' >> .config
           make defconfig
 
       - name: Download packages
-        run: make download -j16
+        run: | 
+          make download -j16
+          find dl -size -1024c -exec rm -f {} \;
 
       - name: Compile firmware
         run: |
@@ -121,11 +129,13 @@ jobs:
 
       - name: Prepare artifact
         run: |
+          mkdir -p ./artifact/firmware
           mkdir -p ./artifact/package
           mkdir -p ./artifact/buildinfo
           rm -rf $(find ./bin/targets/ -type d -name "packages")
-          find ./bin/packages/ -type f -name "*.ipk" -exec cp -rf {} ./artifact/package/ \;
-          find ./bin/targets/ -type f \( -name "*.buildinfo" -o -name "*.manifest" \) -exec cp -rf {} ./artifact/buildinfo/ \;
+          cp -rf $(find ./bin/targets/ -type f) ./artifact/firmware/
+          cp -rf $(find ./bin/packages/ -type f -name "*.ipk") ./artifact/package/
+          cp -rf $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") ./artifact/buildinfo/
       
       - name: Upload buildinfo
         uses: actions/upload-artifact@v3
@@ -144,3 +154,12 @@ jobs:
         with:
           name: OpenWrt_firmware
           path: ./bin/targets/
+
+      #- name: Upload release asset
+      #  if: github.event == 'release'
+      #  uses: svenstaro/upload-release-action@v2
+      #  with:
+      #    repo_token: ${{ secrets.YOURTOKEN }}
+      #    file: ./artifact/firmware/*
+      #    tag: ${{ github.ref }}
+      #    file_glob: true
