@@ -15,6 +15,7 @@
 
 	aliases {
 		serial0 = &blsp1_uart5;
+                serial1 = &blsp1_uart3;
 		led-boot = &led_power;
 		led-failsafe = &led_power;
 		led-running = &led_power;
@@ -23,7 +24,7 @@
 
 	chosen {
 		stdout-path = "serial0:115200n8";
-		bootargs-append = " root=/dev/ubiblock0_1";
+		bootargs-append = " root=/dev/ubiblock0_1 swiotlb=1 coherent_pool=2M";
 	};
 
 	keys {
@@ -192,6 +193,18 @@
 	};
 };
 
+&blsp1_i2c2 {
+	status = "okay";
+};
+
+&blsp1_spi1 {
+	status = "okay";
+};
+
+&blsp1_uart3 {
+	status = "okay";
+};
+
 &blsp1_uart5 {
 	status = "okay";
 };
@@ -201,6 +214,14 @@
 };
 
 &crypto {
+	status = "okay";
+};
+
+&pcie_qmp0 {
+	status = "okay";
+};
+
+&pcie_qmp1 {
 	status = "okay";
 };
 
@@ -216,11 +237,23 @@
 	status = "okay";
 };
 
+&qusb_phy_1 {
+	status = "okay";
+};
+
 &ssphy_0 {
 	status = "okay";
 };
 
+&ssphy_1 {
+	status = "okay";
+};
+
 &usb_0 {
+	status = "okay";
+};
+
+&usb_1 {
 	status = "okay";
 };
 
@@ -302,13 +335,13 @@
 &dp5 {
 	status = "okay";
 	phy-handle = <&qca8081_24>;
-	label = "wan";
+	label = "lan";
 };
 
 &dp6 {
 	status = "okay";
 	phy-handle = <&qca8081_28>;
-	label = "lan";
+	label = "wan";
 };
 
 &wifi {
