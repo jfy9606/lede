@@ -121,7 +121,7 @@ jobs:
       - name: Generate and Compile Firmware for Each Configuration
         run: |
           cd /home/runner/work/coolsnowwolf/lede/workdir/openwrt
-          for config in .github/menuconfig/mt7981/menuconfig-*; do
+          for config in .github/menuconfig/x86_64/menuconfig-*; do
             CONFIG_NAME=$(basename $config)
             echo "======================================="
             echo "Building with configuration: $CONFIG_NAME"
