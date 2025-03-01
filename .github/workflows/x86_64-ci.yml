@@ -89,8 +89,8 @@ jobs:
            sudo -E apt -qq -y autoremove --purge
            sudo -E apt -qq autoclean
            sudo -E timedatectl set-timezone "Asia/Shanghai"
-           sudo -E mkdir -p /home/runner/work/coolsnowwolf/lede/workdir
-           sudo -E chown -R $USER:$GROUPS /home/runner/work/coolsnowwolf/lede/workdir
+           sudo -E mkdir -p /home/runner/work/lede/lede/workdir
+           sudo -E chown -R $USER:$GROUPS /home/runner/work/lede/lede/workdir
 
       #- name: Checkout OpenWrt
       #  uses: actions/checkout@main
@@ -98,14 +98,14 @@ jobs:
       #    fetch-depth: 0
         
       - name: Clone source code
-        working-directory: /home/runner/work/coolsnowwolf/lede/workdir
+        working-directory: /home/runner/work/lede/lede/workdir
         env:
           REPO_URL: "https://github.com/jfy9606/lede/"
           REPO_BRANCH: "main"
         run: |
           df -hT $PWD
           git clone $REPO_URL -b $REPO_BRANCH openwrt
-          ln -sf /home/runner/work/coolsnowwolf/lede/workdir/openwrt $GITHUB_WORKSPACE/openwrt
+          ln -sf /home/runner/work/lede/lede/workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
       - name: Enable build ccache
         uses: stupidloud/cachewrtbuild@main
@@ -115,12 +115,12 @@ jobs:
       
       - name: Update & Install feeds
         run: |
-          /home/runner/work/coolsnowwolf/lede/workdir/openwrt/scripts/feeds update -a
-          /home/runner/work/coolsnowwolf/lede/workdir/openwrt/scripts/feeds install -a
+          /home/runner/work/lede/lede/workdir/openwrt/scripts/feeds update -a
+          /home/runner/work/lede/lede/workdir/openwrt/scripts/feeds install -a
 
       - name: Generate and Compile Firmware for Each Configuration
         run: |
-          cd /home/runner/work/coolsnowwolf/lede/workdir/openwrt
+          cd /home/runner/work/lede/lede/workdir/openwrt
           for config in .github/menuconfig/x86_64/menuconfig-*; do
             CONFIG_NAME=$(basename $config)
             echo "======================================="
@@ -153,13 +153,13 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: Openwrt_artifacts
-          path: /home/runner/work/coolsnowwolf/lede/workdir/openwrt/artifact/
+          path: /home/runner/work/lede/lede/workdir/openwrt/artifact/
           
       - name: Upload Firmware from Targets Directory
         uses: actions/upload-artifact@main
         with:
           name: OpenWrt_firmware_from_targets
-          path: /home/runner/work/coolsnowwolf/lede/workdir/openwrt/bin/targets/
+          path: /home/runner/work/lede/lede/workdir/openwrt/bin/targets/
 
       #- name: Upload release asset
       #  if: github.event == 'release'
