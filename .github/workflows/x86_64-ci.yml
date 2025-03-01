@@ -152,13 +152,13 @@ jobs:
       - name: Upload All Build Artifacts
         uses: actions/upload-artifact@main
         with:
-          name: Openwrt_artifacts
+          name: x86_64_artifacts
           path: /home/runner/work/lede/lede/workdir/openwrt/artifact/
           
       - name: Upload Firmware from Targets Directory
         uses: actions/upload-artifact@main
         with:
-          name: OpenWrt_firmware_from_targets
+          name: x86_64_firmware_package
           path: /home/runner/work/lede/lede/workdir/openwrt/bin/targets/
 
       #- name: Upload release asset
