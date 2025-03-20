@@ -147,7 +147,6 @@ jobs:
             mkdir -p "$ARTIFACT_DIR/buildinfo"
             mv $(find ./bin/targets/ -type f) "$ARTIFACT_DIR/firmware/"
             mv ./bin/packages/* "$ARTIFACT_DIR/package/"
-            mv $(find ./bin/targets/ -type f -name "*.buildinfo" -o -name "*.manifest") "$ARTIFACT_DIR/buildinfo/"
           done
 
       - name: Upload Firmware Artifacts
@@ -161,12 +160,6 @@ jobs:
         with:
           name: x86_64_packages
           path: /home/runner/work/lede/lede/workdir/openwrt/artifact/$CONFIG_NAME/package
-
-      - name: Upload Buildinfo Artifacts
-        uses: actions/upload-artifact@main
-        with:
-          name: x86_64_buildinfo
-          path: /home/runner/work/lede/lede/workdir/openwrt/artifact/$CONFIG_NAME/buildinfo
 
       #- name: Upload release asset
       #  if: github.event == 'release'
