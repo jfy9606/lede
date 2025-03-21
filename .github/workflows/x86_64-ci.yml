@@ -146,7 +146,7 @@ jobs:
             mkdir -p "$ARTIFACT_DIR/package"
             mkdir -p "$ARTIFACT_DIR/buildinfo"
             mv $(find ./bin/targets/ -type f) "$ARTIFACT_DIR/firmware/"
-            mv "$ARTIFACT_DIR/firmware/*.ipk" "$ARTIFACT_DIR/package/"
+            mv "$ARTIFACT_DIR/firmware/*.ipk" "$ARTIFACT_DIR/package/" || true
             mv ./bin/packages/* "$ARTIFACT_DIR/package/"
 
       - name: Upload Firmware Artifacts
