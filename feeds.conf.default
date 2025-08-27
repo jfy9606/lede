@@ -3,11 +3,12 @@ src-git packages https://github.com/jfy9606/openwrt-packages;lede
 src-git luci https://github.com/jfy9606/openwrt-luci.git;lede
 src-git routing https://github.com/coolsnowwolf/routing
 src-git telephony https://github.com/coolsnowwolf/telephony.git
-#src-git helloworld https://github.com/fw876/helloworld.git
+src-git helloworld https://github.com/fw876/helloworld.git
 #src-git oui https://github.com/zhaojh329/oui.git
 #src-git video https://github.com/openwrt/video.git
 #src-git targets https://github.com/openwrt/targets.git
 #src-git oldpackages http://git.openwrt.org/packages.git
+#src-git qmodem https://github.com/FUjr/modem_feeds.git
 #src-link custom /usr/src/openwrt/custom-feed
 # istore
 src-git store https://github.com/linkease/istore.git;main
