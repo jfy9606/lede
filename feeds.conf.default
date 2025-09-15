@@ -1,7 +1,6 @@
-src-git packages https://github.com/jfy9606/openwrt-packages;lede
-#src-git luci https://github.com/jfy9606/openwrt-luci.git;lede
-src-git luci https://github.com/jfy9606/openwrt-luci.git;lede
-src-git routing https://github.com/coolsnowwolf/routing
+src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-24.10
+src-git packages https://github.com/coolsnowwolf/packages.git
+src-git routing https://github.com/coolsnowwolf/routing.git
 src-git telephony https://github.com/coolsnowwolf/telephony.git
 src-git helloworld https://github.com/fw876/helloworld.git
 #src-git oui https://github.com/zhaojh329/oui.git
