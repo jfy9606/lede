@@ -22,4 +22,4 @@ src-git helloworld https://github.com/fw876/helloworld.git
 #src-link custom /usr/src/openwrt/custom-feed
 # other
 src-git easyluci https://github.com/EasyTier/luci-app-easytier.git
-
+src-git oaf https://github.com/destan19/OpenAppFilter.git
