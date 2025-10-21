@@ -27,8 +27,7 @@ define Device/ariaboard_photonicat2
   DEVICE_MODEL := Photonicat 2
   SOC := rk3576
   DEVICE_DTS := rockchip/rk3576-photonicat2
-  UBOOT_DEVICE_NAME := evb-rk3576
-  DEVICE_PACKAGES := kmod-aic8800u ath11k-firmware-wcn6855 kmod-ath11k-pci kmod-mt7922-firmware kmod-mt7921-firmware wpad
+  UBOOT_DEVICE_NAME := generic-rk3576
   IMAGE/sysupgrade.img.gz := boot-common | boot-script rk3576 | pine64-img | gzip | append-metadata
   DEVICE_PACKAGES := kmod-aic8800u wpad-openssl
 endef
@@ -60,7 +59,7 @@ define Device/armsom_sige5
   DEVICE_MODEL := Sige5
   SOC := rk3576
   DEVICE_DTS := rockchip/rk3576-armsom-sige5
-  UBOOT_DEVICE_NAME := evb-rk3576
+  UBOOT_DEVICE_NAME := sige5-rk3576
   IMAGE/sysupgrade.img.gz := boot-common | boot-script rk3576 | pine64-img | gzip | append-metadata
 endef
 TARGET_DEVICES += armsom_sige5
@@ -162,7 +161,7 @@ define Device/friendlyarm_nanopi-m5
   DEVICE_MODEL := NanoPi M5
   SOC := rk3576
   DEVICE_DTS := rockchip/rk3576-nanopi-m5
-  UBOOT_DEVICE_NAME := evb-rk3576
+  UBOOT_DEVICE_NAME := generic-rk3576
   DEVICE_PACKAGES := kmod-gpio-button-hotplug
   IMAGE/sysupgrade.img.gz := boot-common | boot-script rk3576 | pine64-img | gzip | append-metadata
 endef
@@ -292,7 +291,7 @@ define Device/friendlyarm_nanopi-r76s
   DEVICE_MODEL := NanoPi R76S
   SOC := rk3576
   DEVICE_DTS := rockchip/rk3576-nanopi-r76s
-  UBOOT_DEVICE_NAME := evb-rk3576
+  UBOOT_DEVICE_NAME := generic-rk3576
   DEVICE_PACKAGES := kmod-gpio-button-hotplug kmod-r8125
   IMAGE/sysupgrade.img.gz := boot-common | boot-script rk3576 | pine64-img | gzip | append-metadata
 endef
@@ -387,17 +386,6 @@ define Device/mmbox_anas3035
   DEVICE_PACKAGES := kmod-ata-ahci-dwc kmod-hwmon-drivetemp kmod-hwmon-pwmfan kmod-r8125-rss
 endef
 TARGET_DEVICES += mmbox_anas3035
-
-define Device/nlnet_xgp
-  DEVICE_VENDOR := NLnet
-  DEVICE_MODEL := XiGuaPi
-  SOC := rk3568
-  UBOOT_DEVICE_NAME := nlnet-xgp-rk3568
-  IMAGE/sysupgrade.img.gz := boot-common | boot-script | pine64-img | gzip | append-metadata
-  DEVICE_PACKAGES := kmod-hwmon-pwmfan kmod-mt7921e wpad-openssl
-  DEVICE_DTS = rockchip/rk3568-nlnet-xgp-v3
-endef
-TARGET_DEVICES += nlnet_xgp
 
 define Device/nlnet_xiguapi-v3
   DEVICE_VENDOR := NLnet
