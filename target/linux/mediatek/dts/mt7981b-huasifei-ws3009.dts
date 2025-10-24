@@ -38,33 +38,57 @@
 	leds {
 		compatible = "gpio-leds";
 
+<<<<<<< HEAD
 		led_status: led_status {
+=======
+		led_status: status {
+>>>>>>> upstream/master
 			label = "red:status";
 			gpios = <&pio 0 GPIO_ACTIVE_LOW>;
 		};
 
+<<<<<<< HEAD
 		
 		led_running: running_led {
+=======
+		led_running: running {
+>>>>>>> upstream/master
 			label = "green:running";
 			gpios = <&pio 10 GPIO_ACTIVE_LOW>;
 		};
 
+<<<<<<< HEAD
 		led-1 {
+=======
+		internet {
+>>>>>>> upstream/master
 			label = "blue:internet";
 			gpios = <&pio 11 GPIO_ACTIVE_LOW>;
 		};
 
+<<<<<<< HEAD
 		led-2 {
+=======
+		network1 {
+>>>>>>> upstream/master
 			label = "green:network1";
 			gpios = <&pio 6 GPIO_ACTIVE_LOW>;
 		};
 
+<<<<<<< HEAD
 		led-3 {
+=======
+		network2 {
+>>>>>>> upstream/master
 			label = "green:network2";
 			gpios = <&pio 7 GPIO_ACTIVE_LOW>;
 		};
 
+<<<<<<< HEAD
 		led-5 {
+=======
+		network3 {
+>>>>>>> upstream/master
 			label = "green:network3";
 			gpios = <&pio 9 GPIO_ACTIVE_LOW>;
 		};
@@ -129,7 +153,14 @@
 		compatible = "mediatek,eth-mac";
 		reg = <1>;
 		phy-mode = "gmii";
+<<<<<<< HEAD
 		phy-handle = <&phy0>;
+=======
+		phy-handle = <&int_gbe_phy>;
+
+		nvmem-cells = <&macaddr_factory_4 2>;
+		nvmem-cell-names = "mac-address";
+>>>>>>> upstream/master
 	};
 };
 
@@ -143,6 +174,7 @@
 		interrupt-parent = <&pio>;
 		interrupts = <38 IRQ_TYPE_LEVEL_HIGH>;
 	};
+<<<<<<< HEAD
 
 	phy0: ethernet-phy@0 {
 		compatible = "ethernet-phy-id03a2.9461";
@@ -157,6 +189,8 @@
 		reg = <1>;
 		phy-mode = "2500base-x";
 	};
+=======
+>>>>>>> upstream/master
 };
 
 &spi0 {
@@ -185,18 +219,30 @@
 
 			partition@0 {
 				label = "BL2";
+<<<<<<< HEAD
 				reg = <0x0 0x100000>; /* 1 MiB */
+=======
+				reg = <0x0 0x100000>;
+>>>>>>> upstream/master
 				read-only;
 			};
 
 			partition@100000 {
 				label = "u-boot-env";
+<<<<<<< HEAD
 				reg = <0x100000 0x80000>; /* 0.5 MiB */
+=======
+				reg = <0x100000 0x80000>;
+>>>>>>> upstream/master
 			};
 
 			partition@180000 {
 				label = "Factory";
+<<<<<<< HEAD
 				reg = <0x180000 0x200000>; /* 2 MiB */
+=======
+				reg = <0x180000 0x200000>;
+>>>>>>> upstream/master
 				read-only;
 
 				nvmem-layout {
@@ -218,17 +264,30 @@
 
 			partition@380000 {
 				label = "FIP";
+<<<<<<< HEAD
 				reg = <0x380000 0x200000>; /* 2 MiB */
+=======
+				reg = <0x380000 0x200000>;
+				read-only;
+>>>>>>> upstream/master
 			};
 
 			partition@580000 {
 				label = "ubi";
+<<<<<<< HEAD
 				reg = <0x580000 0xe600000>; /* 230 MiB */
+=======
+				reg = <0x580000 0x6e00000>;
+>>>>>>> upstream/master
 			};
 
 			partition@7380000 {
 				label = "config";
+<<<<<<< HEAD
 				reg = <0x7380000 0x80000>; /* 0.5 MiB */
+=======
+				reg = <0x7380000 0x80000>;
+>>>>>>> upstream/master
 			};
 		};
 	};
@@ -279,7 +338,10 @@
 			label = "lan4";
 		};
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> upstream/master
 		port@6 {
 			reg = <6>;
 			label = "cpu";
@@ -308,9 +370,15 @@
 };
 
 &wifi {
+<<<<<<< HEAD
 	status = "okay";
 	nvmem-cells = <&eeprom_factory_0>;
 	nvmem-cell-names = "eeprom";
+=======
+	nvmem-cells = <&eeprom_factory_0>;
+	nvmem-cell-names = "eeprom";
+	status = "okay";
+>>>>>>> upstream/master
 };
 
 &xhci {

@@ -69,6 +69,10 @@ menu "Global build settings"
 		default y
 
 	config USE_APK
+<<<<<<< HEAD
+=======
+		imply PACKAGE_apk-mbedtls
+>>>>>>> upstream/master
 		bool "Use APK instead of OPKG to build distribution (EXPERIMENTAL)"
 
 	comment "General build options"

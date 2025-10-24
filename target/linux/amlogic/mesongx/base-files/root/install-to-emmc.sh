@@ -1,1 +1,0 @@
-/usr/sbin/install-to-emmc.sh

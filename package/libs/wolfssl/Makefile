@@ -20,7 +20,10 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(BUILD_VARIANT)/$(PKG_NAME)-$(PKG_REAL_
 
 PKG_FIXUP:=libtool libtool-abiver
 PKG_INSTALL:=1
+<<<<<<< HEAD
 PKG_USE_MIPS16:=0
+=======
+>>>>>>> upstream/master
 PKG_BUILD_FLAGS:=no-mips16 lto
 PKG_BUILD_PARALLEL:=1
 PKG_LICENSE:=GPL-2.0-or-later
