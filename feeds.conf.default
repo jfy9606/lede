@@ -9,7 +9,7 @@ src-git third https://github.com/jjm2473/openwrt-third.git;main
 src-git nas https://github.com/linkease/nas-packages.git;master
 src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main
 # main
-src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-24.10
+src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-25.12
 src-git packages https://github.com/coolsnowwolf/packages.git
 src-git routing https://github.com/coolsnowwolf/routing.git
 src-git telephony https://github.com/coolsnowwolf/telephony.git
