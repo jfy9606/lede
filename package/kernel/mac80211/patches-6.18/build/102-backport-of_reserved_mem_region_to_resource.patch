@@ -1,6 +1,6 @@
 --- /dev/null
 +++ b/backport-include/linux/of_reserved_mem.h
-@@ -0,0 +1,39 @@
+@@ -0,0 +1,46 @@
 +#ifndef _COMPAT_OF_RESERVED_MEM_H
 +#define _COMPAT_OF_RESERVED_MEM_H
 +
@@ -11,36 +11,36 @@
 +#if LINUX_VERSION_IS_LESS(6,16,0)
 +
 +static inline int backport_of_reserved_mem_region_to_resource(
-+	const struct device_node *np, unsigned int idx, struct resource *res)
++       const struct device_node *np, unsigned int idx, struct resource *res)
 +{
-+	struct device_node *target;
-+	struct reserved_mem *rmem;
-+	int ret = -ENODEV;
++       struct device_node *target;
++       struct reserved_mem *rmem;
++       int ret = -ENODEV;
 +
-+	target = of_parse_phandle(np, "memory-region", idx);
-+	if (!target)
-+		return -ENODEV;
++       target = of_parse_phandle(np, "memory-region", idx);
++       if (!target)
++               return -ENODEV;
 +
-+	if (!of_device_is_available(target))
-+		goto out;
++       if (!of_device_is_available(target))
++               goto out;
 +
-+	rmem = of_reserved_mem_lookup(target);
-+	if (!rmem) {
-+		ret = -EINVAL;
-+		goto out;
-+	}
++       rmem = of_reserved_mem_lookup(target);
++       if (!rmem) {
++               ret = -EINVAL;
++               goto out;
++       }
 +
-+	res->start = rmem->base;
-+	res->end = rmem->base + rmem->size - 1;
-+	res->flags = IORESOURCE_MEM;
-+	res->name = rmem->name;
-+	ret = 0;
++       res->start = rmem->base;
++       res->end = rmem->base + rmem->size - 1;
++       res->flags = IORESOURCE_MEM;
++       res->name = rmem->name;
++       ret = 0;
 +out:
-+	of_node_put(target);
-+	return ret;
++       of_node_put(target);
++       return ret;
 +}
-+#define of_reserved_mem_region_to_resource backport_of_reserved_mem_region_to_resource
 +
++#define of_reserved_mem_region_to_resource backport_of_reserved_mem_region_to_resource
 +#endif /* LINUX_VERSION_IS_LESS(6,16,0) */
 +
 +#endif /* _COMPAT_OF_RESERVED_MEM_H */
